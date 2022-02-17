@@ -1,6 +1,6 @@
 Add members names here to make sure git is working:
 
-Angel Monroy (1)
+Angel Monroy 
 Vedaant Vyas
 
 
