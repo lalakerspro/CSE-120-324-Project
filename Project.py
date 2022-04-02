@@ -7,13 +7,11 @@ class RetrieveImages{
 
 }
 
-
-class OutputResults{
+class InterpretImages{
 
 }
 
-
-class InterpretImages{
+class OutputResults{
 
 }
 
