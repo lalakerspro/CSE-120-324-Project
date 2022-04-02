@@ -1,18 +1,18 @@
 
-class Camera {
+class Camera:
+  
+  
 
-}
+class RetrieveImages:
+  
+  
 
-class RetrieveImages{
+class InterpretImages:
+  
+  
 
-}
-
-class InterpretImages{
-
-}
-
-class OutputResults{
-
-}
+class OutputResults:
+  
+  
 
 
