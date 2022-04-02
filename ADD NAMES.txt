@@ -2,5 +2,6 @@ Add members names here to make sure git is working:
 
 Angel Monroy 
 Vedaant Vyas
-
+Sunita Thao
+Kshav Ayer
 
