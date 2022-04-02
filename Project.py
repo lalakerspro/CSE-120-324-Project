@@ -1,12 +1,20 @@
 
+class Camera {
+
+}
+
+class RetrieveImages{
+
+}
 
 
-class RetrieveImages
+class OutputResults{
+
+}
 
 
-class Output Results
+class InterpretImages{
+
+}
 
 
-class InterpretImages
-
-class Camera
