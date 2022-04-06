@@ -2,5 +2,10 @@ Add members names here to make sure git is working:
 
 Angel Monroy 
 Vedaant Vyas
+<<<<<<< HEAD
 Steohen Garcia
+=======
+Sunita Thao
+Kshav Ayer
+>>>>>>> 1e1b6a90574d96954e09a77fec8dce3570bed428
 
