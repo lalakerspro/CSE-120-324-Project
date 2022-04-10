@@ -17,4 +17,13 @@ class cameraApp(App) :
         btn.font_size = 35
         btn.background_color = 'blue'
         btn.bind (on_press = self.capture_image)
-        
+
+        layout = GridLayout(rows=2, cols =1)
+
+        layout.add_widget (cam)
+        layout.add_widget (btn)
+
+        return layout
+
+    def capture_image (self,*args):
+         
