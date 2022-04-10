@@ -9,7 +9,7 @@ Window.size = (500,550)
 class cameraApp(App) :
 
     def build (self):
-        global cameraApp
+        global cam
         cam = Camera()
 
         btn = Button (text="Capture Image")
