@@ -26,4 +26,14 @@ class cameraApp(App) :
         return layout
 
     def capture_image (self,*args):
-         
+         global cam
+
+         cam.export_to_png('image.png')
+
+         print('Image captured and saved in directory')
+
+
+if __name__ == '__main__':
+    cameraApp().run()
+
+    
