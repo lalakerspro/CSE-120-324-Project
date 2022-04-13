@@ -1,39 +1,41 @@
+
 from kivy.app import App
-from kivy.uix.camera import Camera
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.button import Button
-from kivy.core.window import Window
-
-Window.size = (500,550)
-
-class cameraApp(App) :
-
-    def build (self):
-        global cam
-        cam = Camera()
-
-        btn = Button (text="Capture Image")
-        btn.size_hint = (.1,.1)
-        btn.font_size = 35
-        btn.background_color = 'blue'
-        btn.bind (on_press = self.capture_image)
-
-        layout = GridLayout(rows=2, cols =1)
-
-        layout.add_widget (cam)
-        layout.add_widget (btn)
-
-        return layout
-
-    def capture_image (self,*args):
-         global cam
-
-         cam.export_to_png('image.png')
-
-         print('Image captured and saved in directory')
+from kivy.lang import Builder
+from kivy.uix.boxlayout import BoxLayout
+import time
+Builder.load_string('''
+<CameraClick>:
+    orientation: 'vertical'
+    Camera:
+        id: camera
+        resolution: (640, 480)
+        play: False
+    ToggleButton:
+        text: 'Play'
+        on_press: camera.play = not camera.play
+        size_hint_y: None
+        height: '48dp'
+    Button:
+        text: 'Capture'
+        size_hint_y: None
+        height: '48dp'
+        on_press: root.capture()
+''')
 
 
-if __name__ == '__main__':
-    cameraApp().run()
+class CameraClick(BoxLayout):
+    def capture(self):
+        
+        camera = self.ids['camera']
+        timestr = time.strftime("%Y%m%d_%H%M%S")
+        camera.export_to_png("IMG_{}.png".format(timestr))
+        print("Captured")
 
-    
+
+class TestCamera(App):
+
+    def build(self):
+        return CameraClick()
+
+
+TestCamera().run()
