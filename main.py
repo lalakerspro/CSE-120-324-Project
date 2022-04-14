@@ -18,16 +18,6 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 import time
-from kivy.app import App
-from kivy.lang import Builder
-from kivy.uix.boxlayout import BoxLayout
-import time
-from PIL import Image
-
-import pytesseract
-
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
 Builder.load_string('''
 <CameraClick>:
     orientation: 'vertical'
@@ -44,9 +34,7 @@ Builder.load_string('''
         text: 'Capture'
         size_hint_y: None
         height: '48dp'
-        on_press:
-            root.capture()
-            root.test()
+        on_press: root.capture()
 ''')
 
 
@@ -58,11 +46,8 @@ class CameraClick(BoxLayout):
         '''
         camera = self.ids['camera']
         timestr = time.strftime("%Y%m%d_%H%M%S")
-        c=camera.export_to_png("IMG.png")
-        return c;
-    def test(self):
-        image = Image.open('IMG.PNG')
-        print(pytesseract.image_to_string(image, lang='eng'))
+        camera.export_to_png("IMG.png")
+        print("Captured")
 
 
 class TestCamera(App):
