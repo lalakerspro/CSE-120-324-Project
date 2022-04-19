@@ -4,6 +4,10 @@ from PIL import ImageFont, ImageDraw, Image
 
 import pytesseract
 
+#Database import as well as other necessary imports
+import Database
+import datetime
+
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 
@@ -47,7 +51,17 @@ while True:
         cv2.imshow("Text", image)
    
 # Displaying the image
-cv2.imshow(window_name, image) 
+cv2.imshow(window_name, image)
+
+
+
+#I am assuming image_to_text is the serial
+#Inserting Data into database
+#Example: insertDATA("19:51/4/14/22", "S158392", "C:\Users\Blood\source\repos\CSE-120-324-Project\IMG.png")
+img_name = datetime.datetime
+img_name_jpg = img_name+".jpg"
+cv2.imwrite(img_name, image)
+insertDATA(datetime.datetime, image_to_text, img_name_jpg)
 
 cam.release()
 

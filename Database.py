@@ -43,5 +43,5 @@ def insertDATA(date, serialnumber, image):
             #Time = Time, Day,  Month, Year
             #Serial= Serial #
             #Image = Image Name / Image
-insertDATA("19:51/4/14/22", "S158392", "C:\Users\Blood\source\repos\CSE-120-324-Project\IMG.png")
-insertDATA("20:00/4/14/22", "S603043", "C:\Users\Blood\source\repos\CSE-120-324-Project\IMG2.png")
+#insertDATA("19:51/4/14/22", "S158392", "C:\Users\Blood\source\repos\CSE-120-324-Project\IMG.png")
+#insertDATA("20:00/4/14/22", "S603043", "C:\Users\Blood\source\repos\CSE-120-324-Project\IMG2.png")
