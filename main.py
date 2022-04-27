@@ -38,16 +38,15 @@ while True:
     elif k%256 == 32:
         # SPACE pressed
         image=frame;
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         fm = cv2.Laplacian(image, cv2.CV_64F).var()
         print(fm)
         leg = cv2.imread('leg.png')
         nonleg = cv2.imread('nonleg.png')
-        if fm <90:
+        if fm <40:
             result=nonleg
         else:
             result=leg
-
+           
         position = (10,50)
         cv2.putText(
             image, #numpy array on which text is written
