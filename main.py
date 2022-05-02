@@ -15,7 +15,7 @@ import datetime
 i=0
 
 #starting camera
-cam = cv2.VideoCapture(2)
+cam = cv2.VideoCapture(0)
 
 
 
@@ -50,7 +50,7 @@ while True:
         i += 1
         
         #determining if image is legible based on threshold
-        print(thresh)
+        
         if thresh <1000:
             fontcolor=(0,0,255)
             result=nonleg
