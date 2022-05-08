@@ -4,15 +4,19 @@ import sys
 import numpy as np
 import cv2
 import os
+import mysql.connector
 from PIL import ImageFont, ImageDraw, Image 
 
 
 
+
 #Database import as well as other necessary imports
-import Database
+from Database import insertDATA, convertFileToName
 import datetime
 
 i=0
+#test serial #
+serialnumber_txt="S158392"
 
 #starting camera
 cam = cv2.VideoCapture(0)
@@ -50,8 +54,7 @@ while True:
         i += 1
         
         #determining if image is legible based on threshold
-        
-        if thresh <1000:
+        if thresh <90:
             fontcolor=(0,0,255)
             result=nonleg
         else:
@@ -68,18 +71,26 @@ while True:
             1, 
             fontcolor, 
             3) 
+        #Test var example
+        img_name_time = "050122"
+        img_name_png = "{}#{}".format(img_name_time, img_name)
+        cv2.imwrite(img_name_png, image)
+        imgfinal = "{}".format(img_name_png)
+        
 
         cv2.imshow('CAPTURED SPRING', image)
         #showing legibility
         cv2.imshow('Result', result)
 
+        insertDATA(img_name_time, serialnumber_txt, imgfinal)
+
    
 # Displaying the image
 
-img_name = datetime.datetime
-img_name_jpg = img_name+".jpg"
-cv2.imwrite(img_name, image)
-insertDATA(datetime.datetime, image_to_text, img_name_jpg)
+#img_name = datetime.datetime
+#img_name_jpg = img_name+".jpg"
+#cv2.imwrite(img_name, image)
+#insertDATA(datetime.datetime, image_to_text, img_name_jpg)
 
 
 
