@@ -15,8 +15,7 @@ from Database import insertDATA, convertFileToName
 import datetime
 
 i=0
-#test serial #
-serialnumber_txt="S158392"
+
 
 #starting camera
 cam = cv2.VideoCapture(0)
@@ -46,12 +45,7 @@ while True:
         thresh = cv2.Laplacian(image, cv2.CV_64F).var()
         leg = cv2.imread('leg.png')
         nonleg = cv2.imread('nonleg.png')
-        path = 'images'
-        #writing the image to a file
-        img_name = "spring{}.png".format(i+1)
-        cv2.imwrite(os.path.join(path , img_name), frame)
-        cv2.waitKey(0)
-        i += 1
+        
         
         #determining if image is legible based on threshold
         if thresh <90:
@@ -72,25 +66,24 @@ while True:
             fontcolor, 
             3) 
         #Test var example
-        img_name_time = "050122"
-        img_name_png = "{}#{}".format(img_name_time, img_name)
-        cv2.imwrite(img_name_png, image)
-        imgfinal = "{}".format(img_name_png)
+        path = 'springs'
+        #writing the image to a file
+        img_name = "spring{}.png".format(i+1)
+        cv2.imwrite(os.path.join(path , img_name), frame)
+        cv2.waitKey(0)
+        i += 1
+       
         
 
         cv2.imshow('CAPTURED SPRING', image)
         #showing legibility
         cv2.imshow('Result', result)
 
-        insertDATA(img_name_time, serialnumber_txt, imgfinal)
+       
 
    
-# Displaying the image
 
-#img_name = datetime.datetime
-#img_name_jpg = img_name+".jpg"
-#cv2.imwrite(img_name, image)
-#insertDATA(datetime.datetime, image_to_text, img_name_jpg)
+
 
 
 
