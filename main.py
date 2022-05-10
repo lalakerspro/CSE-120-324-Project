@@ -12,10 +12,12 @@ from PIL import ImageFont, ImageDraw, Image
 
 #Database import as well as other necessary imports
 from database import insertDATA, convertFileToName
-import datetime
+from datetime import date
+import time
 
 i=0
-
+#clearing text file
+open('results.txt', 'w').close()
 
 #starting camera
 cam = cv2.VideoCapture(0)
@@ -29,10 +31,10 @@ while True:
     if not ret:
         print("failed to grab frame")
         break
-    cv2.namedWindow("SpringScan", cv2.WINDOW_NORMAL)
-    cv2.moveWindow("SpringScan", 100,100);
+    cv2.namedWindow("SCANNER", cv2.WINDOW_NORMAL)
+    cv2.resizeWindow("SCANNER", 1280, 720)
  
-    cv2.imshow("SpringScan", frame)
+    cv2.imshow("SCANNER", frame)
     
 
     k = cv2.waitKey(1)
@@ -48,12 +50,14 @@ while True:
         
         
         #determining if image is legible based on threshold
-        if thresh <90: #CAN BE CHANGED IF NEEDED
+        if thresh <1000: #CAN BE CHANGED IF NEEDED
             fontcolor=(0,0,255)
             result=nonleg
+            legibility="NONLEGIBLE"
         else:
             fontcolor=(0,204,0)
             result=leg
+            legibility="LEGIBLE"
            
         #outputting captured spring   
         position = (10,50)
@@ -72,14 +76,25 @@ while True:
         cv2.imwrite(os.path.join(path , img_name), frame)
         cv2.waitKey(0)
         i += 1
-       
         
+        seconds = time.time()
+        local_time = time.ctime(seconds)
 
         cv2.imshow('CAPTURED SPRING', image)
         #showing legibility
         cv2.imshow('Result', result)
+        #putting into text file
+        outputs=[str(local_time),legibility]
+        with open('results.txt', 'a') as f:
+            for output in outputs:
+                f.write(output)
+                f.write('\n')
+            f.write('\n')
+           
 
-       
+        #inserting into database
+
+        #insertDATA(time, legibility)#COMMENT OUT THIS LINE IF DATABASE DOESNT WORK
 
    
 
