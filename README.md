@@ -15,6 +15,9 @@ imutils
 numpy
 mySQL database
 
+The SQL Server:
+https://dev.mysql.com/downloads/installer/
+
 TO RUN THE APP:
 
 1. open a terminal and run "main.py"
@@ -26,3 +29,4 @@ TO RUN THE APP:
 FIXING SMALL ISSUES:
 1. If the wrong camera is being read, the number after "Video.Capture() can be changed in line 21 of "main.py".
 2. If the legibility scanning is being deemed inaccurate, line 51 of "main.py" can be easily changed by changing the threshold. 
+3. If you get a database error, simply comment out line 84
