@@ -11,7 +11,7 @@ from PIL import ImageFont, ImageDraw, Image
 
 
 #Database import as well as other necessary imports
-from Database import insertDATA, convertFileToName
+from database import insertDATA, convertFileToName
 import datetime
 
 i=0
