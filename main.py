@@ -48,7 +48,7 @@ while True:
         
         
         #determining if image is legible based on threshold
-        if thresh <90:
+        if thresh <90: #CAN BE CHANGED IF NEEDED
             fontcolor=(0,0,255)
             result=nonleg
         else:
