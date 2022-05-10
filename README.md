@@ -15,6 +15,9 @@ imutils
 numpy
 mySQL database
 
+The SQL Server:
+https://dev.mysql.com/downloads/installer/
+
 TO RUN THE APP:
 
 1. open a terminal and run "main.py"
