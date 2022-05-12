@@ -20,7 +20,7 @@ i=0
 open('results.txt', 'w').close()
 
 #starting camera
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(2)
 
 
 
