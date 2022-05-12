@@ -25,7 +25,7 @@ TO RUN THE APP:
 3. Move the webcam as close as you can to the spring logo, and press SPACEBAR to capture the spring shown on the feed
 4. An image of the captured spring will pop up, as well as a message on if it is legible or not.
 5. The captured springs will be shown in the "images" folder.
-6. A tet file called "results.txt" will store the time of the captures and the results
+6. A text file called "results.txt" will store the time of the captures and the results
 
 FIXING SMALL ISSUES:
 1. If the wrong camera is being read, the number after "Video.Capture() can be changed in line 23 of "main.py".
