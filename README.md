@@ -34,7 +34,7 @@ mySQL (install this regardless of whether you will use a database)
 
 
 
-The SQL Server: (OPTIONAL, only if you want a database)
+The SQL Server: (OPTIONAL, only if you want a database! May not work)
 https://dev.mysql.com/downloads/installer/
 
 
