@@ -11,7 +11,7 @@ from PIL import ImageFont, ImageDraw, Image
 
 
 #Database import as well as other necessary imports
-from database import insertDATA, convertFileToName
+from database import insertDATA, convertFileToName, createDATABASE
 from datetime import date
 import time
 
@@ -84,7 +84,8 @@ while True:
         #showing legibility
         cv2.imshow('Result', result)
         #putting into text file
-        outputs=[str(local_time),legibility]
+        print("Succesfully pushed into MySQL Server database: python_db")
+        outputs=[img_name,str(local_time),legibility]
         with open('results.txt', 'a') as f:
             for output in outputs:
                 f.write(output)
@@ -93,8 +94,9 @@ while True:
            
 
         #inserting into database
-
-        #insertDATA(time, legibility)#COMMENT OUT THIS LINE IF DATABASE DOESNT WORK
+            
+        #createDATABASE() #COMMENT OUT IF DATABASE ALREADY CREATED
+        #insertDATA(time, legibility, img_name)#COMMENT OUT THIS LINE IF DATABASE DOESNT WORK
 
    
 
