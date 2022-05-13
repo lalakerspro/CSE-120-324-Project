@@ -1,3 +1,6 @@
+PLEASE REFERENCE: 2022-01-Spring-CSE-Team324-report.pdf for more detailed instructions
+
+
 This app lets you scan a spring using a detachable webcam camera, and outputs whether the logo is legible or not.
 
 
