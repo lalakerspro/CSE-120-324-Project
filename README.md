@@ -38,6 +38,8 @@ The SQL Server: (OPTIONAL, only if you want a database! May not work)
 Step 1 (Download):
 https://dev.mysql.com/downloads/installer/
 
+Remember to set the Username/Password as 'root'. If you would like to change the user/pass don't forget to change the connection code in the database.py. View the tutorial below to get a better understanding.
+
 Step 2:
 Follow this tutorial to setup your local server: 
 https://www.youtube.com/watch?v=3vsC05rxZ8c 
@@ -47,7 +49,9 @@ Uncomment the database instructions in main.py (Delete the '#' from the bottom l
   1st:
     Uncomment the createDATABASE then run program completely.
   2nd:
-    Re-comment the createDATABASE and then uncomment the insertDATA. You are now ready to go!
+    Re-comment the createDATABASE and then uncomment the createDATABASETABLE. 
+  3rd:
+    Re-comment the createDATABASETABLE and uncomment the insertDATA. You are now ready to go!
 
 
 TO DOWNLOAD THE APP:
