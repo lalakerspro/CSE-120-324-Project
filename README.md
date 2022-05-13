@@ -1,3 +1,6 @@
+PLEASE REFERENCE: 2022-01-Spring-CSE-Team324-report.pdf for more detailed instructions
+
+
 This app lets you scan a spring using a detachable webcam camera, and outputs whether the logo is legible or not.
 
 
@@ -31,9 +34,20 @@ mySQL (install this regardless of whether you will use a database)
 
 
 
-The SQL Server: (OPTIONAL, only if you want a database)
+The SQL Server: (OPTIONAL, only if you want a database! May not work)
+Step 1 (Download):
 https://dev.mysql.com/downloads/installer/
 
+Step 2:
+Follow this tutorial to setup your local server: 
+https://www.youtube.com/watch?v=3vsC05rxZ8c 
+
+Step 3: 
+Uncomment the database instructions in main.py (Delete the '#' from the bottom lines which implement the database).
+  1st:
+    Uncomment the createDATABASE then run program completely.
+  2nd:
+    Re-comment the createDATABASE and then uncomment the insertDATA. You are now ready to go!
 
 
 TO DOWNLOAD THE APP:
