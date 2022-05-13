@@ -58,6 +58,8 @@ TO USE THE APP:
 
 6. A text file called "results.txt" will store the time of the captures and the results
 
+7. CLOSE the app (when finished) by closing the terminal
+
 
 7. OPTIONAL: If you would like to use a database, uncomment line 97 in main.py. The database may not work.
 
